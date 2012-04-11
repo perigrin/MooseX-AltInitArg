@@ -1,6 +1,8 @@
-package MooseX-AltInitArg;
+package MooseX::AltInitArg;
 use Moose;
 use namespace::autoclean;
+
+use MooseX::AltInitArg::Meta::Trait::Attribute;
 
 # ABSTRACT: My New App!
 
