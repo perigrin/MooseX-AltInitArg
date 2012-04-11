@@ -1,12 +1,12 @@
 package MooseX::AltInitArg;
-use Moose;
-use namespace::autoclean;
+use Moose();
 
+use Moose::Exporter;
 use MooseX::AltInitArg::Meta::Trait::Attribute;
 
-# ABSTRACT: My New App!
+Moose::Exporter->setup_import_methods(
+    class_metaroles => { class => ['MooseX::AltInitArg::Meta::Trait::Class'] }
+);
 
-
-__PACKAGE__->meta->make_immutable;
 1;
 __END__

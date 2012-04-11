@@ -39,8 +39,6 @@ around initialize_instance_slot => sub {
 
         $params->{ $self->init_arg } = delete $params->{ $alternates[0] };
     }
-    use Data::Dumper;
-    warn Dumper $_[-1];
     $self->$orig(@_);
 };
 

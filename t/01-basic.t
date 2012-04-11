@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
-use Test::More tests => 28;
+use Test::More;
 use Test::Moose;
 
 {
@@ -30,7 +30,9 @@ with_immutable {
     is( $test1->baz, undef, 'Attribute set with default init_arg (undef)' );
 
     my $test2 = MyTest->new( bar => 'bar', quux => 'quux' );
-    is( $test2->foo, 'bar', 'Attribute set with default init_arg' );
-    is( $test2->baz, undef, 'Attribute set with default init_arg (undef)' );
+    is( $test2->foo, 'bar', 'Attribute set with alternate init arg' );
+    is( $test2->baz, undef, 'Attribute set with alternate init_arg (undef)' );
 }
 'MyTest';
+
+done_testing;
